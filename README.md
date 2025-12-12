@@ -1,6 +1,4 @@
-# House-Price-predictor
-
-# House Price Predictor
+# 🏠 House Price Predictor
 
 A web-based application that predicts the price of a house based on user inputs like location, size, and number of bedrooms. This project demonstrates the integration of machine learning with a Flask backend and a responsive frontend.
 ```
@@ -10,9 +8,10 @@ A web-based application that predicts the price of a house based on user inputs 
 ````
 A web application that predicts house prices based on key features such as **location**, **square footage**, and **number of bedrooms** using a trained Machine Learning model. Built with **Flask** for backend and **Bootstrap** for a responsive frontend.  
 
----
+
 
 ## Project Structure
+```
 house-price-predictor/
 │
 ├── app.py                 # Main Flask application
@@ -29,28 +28,25 @@ house-price-predictor/
 ├── requirements.txt       # Python dependencies
 └── README.md
 
+````
 
----
-
-## Demo
-Add screenshots or a GIF of your app in action here to showcase how it works.
-
----
 
 ## Features
+```
 - Predicts house prices based on location, total square footage, and number of bedrooms.
 - Responsive user interface.
 - Clean and simple input form.
 - Error handling for missing or invalid inputs.
 - Easily deployable locally or on cloud platforms.
-
----
+```
 
 ## Technologies Used
+```
 - **Backend:** Python, Flask  
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap  
 - **Machine Learning:** Scikit-learn, Pandas, NumPy  
-- **Other Tools:** Jupyter Notebook for data analysis, Git for version control  
+- **Other Tools:** Jupyter Notebook for data analysis, Git for version control
+```
 
 ---
 
@@ -59,6 +55,7 @@ Add screenshots or a GIF of your app in action here to showcase how it works.
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/house-price-predictor.git
+```
 
 ## 2.Navigate into the project directory
 ```
@@ -75,7 +72,7 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 ## 5.Run the Flask app:
-```
-python app.py
+
+```python app.py
 ```
 
