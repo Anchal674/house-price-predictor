@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <title>House Price Predictor</title>
+  </head>
+
+  <body class="bg-dark text-light">
+
+    <div class="container">
+      <div class="row">
+        <div class="card mt-5">
+
+          <div class="card-header text-center">
+            <h1>Welcome to House Price Predictor</h1>
+          </div>
+
+          <div class="card-body">
+
+            <form id="price-form">
+
+              <div class="row">
+
+                <!-- Location -->
+                <div class="col-md-6 form-group text-center">
+                  <label><b>Select the Location:</b></label>
+                  <select class="form-control" required id="location" name="location">
+                    {% for location in locations %}
+                      <option value="{{ location }}">{{ location }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <!-- BHK -->
+                <div class="col-md-6 form-group text-center">
+                  <label><b>Enter BHK:</b></label>
+                  <input type="text" class="form-control" id="bhk"
+                   name="bhk" placeholder="Enter BHK">
+                </div>
+
+                <!-- Bathroom -->
+                <div class="col-md-6 form-group text-center mt-3">
+                  <label><b>Enter Number of Bathroom:</b></label>
+                  <input type="text" class="form-control" id="bath"
+                   name="bath" placeholder="Enter Number of Bathroom">
+                </div>
+
+                <!-- Square feet -->
+                <div class="col-md-6 form-group text-center mt-3">
+                  <label><b>Enter total square feet:</b></label>
+                  <input type="text" class="form-control" id="feet"
+                   name="feet" placeholder="Enter Square feet">
+                </div>
+
+                <!-- Button -->
+                <div class="col-md-12 form-group mt-4">
+                  <button class="btn btn-primary form-control" onclick="send_data(event)">
+                    Predict Price
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+            <br>
+
+            <!-- Prediction Output -->
+            <div class="col-md-12 text-center">
+              <h1><span id="prediction"></span></h1>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function form_handler(event){
+        event.preventDefault();
+      }
+      function send_data(event) {
+        document.querySelector('form').addEventListener("submit",form_handler)
+        
+
+        var fd = new FormData(document.querySelector('form'));
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/predict', true);
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == XMLHttpRequest.DONE) {
+            document.getElementById("prediction").innerHTML ="Predicted Price: ₹" + xhr.responseText;
+          }
+        };
+        xhr.onload= function(){}
+
+        xhr.send(fd);
+      }
+    </script>
+
+  </body>
+</html>
