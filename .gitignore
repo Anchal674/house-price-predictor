@@ -9,12 +9,9 @@ venv/
 env/
 .venv/
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# Jupyter Notebook checkpoint
 
-# Environment variables
-.env
-*.env
+# Environment variab
 
 # IDE / Editor files
 .vscode/
@@ -34,8 +31,5 @@ dist/
 
 # Model files / large files
 *.h5
-*.pkl
-*.joblib
 
-# Uploads
-uploads/
+*.joblib
